@@ -7,6 +7,10 @@ function SongList() {
     { title: "You're Welcome", id: 3 },
   ]);
 
+  const addSong = () => {
+    setSongs([...songs, { title: "Where you are", id: 4 }]); // using id: 4 will throw error after clicking one time so for this we use uuid.
+  };
+
   return (
     <div className="song-list">
       <ul>
@@ -14,6 +18,7 @@ function SongList() {
           return <li key={song.id}>{song.title}</li>;
         })}
       </ul>
+      <button onClick={addSong}>Add a Song</button>
     </div>
   );
 }
