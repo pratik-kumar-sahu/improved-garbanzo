@@ -22,7 +22,12 @@ function SongList() {
   // - this function will run everytime our app re-renders or some data updates.
   useEffect(() => {
     console.log("useEffect hook ran", songs);
-  });
+  }, [songs]);
+  // Adding second params (dependency array) which tells useEffect to run only if that value changes.
+
+  useEffect(() => {
+    console.log("age useEffect ran", age);
+  }, [age]);
 
   return (
     <div className="song-list">
