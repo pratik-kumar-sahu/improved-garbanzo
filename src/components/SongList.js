@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function SongList() {
   const [songs, setSongs] = useState([
@@ -8,7 +9,7 @@ function SongList() {
   ]);
 
   const addSong = () => {
-    setSongs([...songs, { title: "Where you are", id: 4 }]); // using id: 4 will throw error after clicking one time so for this we use uuid.
+    setSongs([...songs, { title: "Where you are", id: uuidv4() }]);
   };
 
   return (
